@@ -9,6 +9,7 @@ import java.time.LocalDate;
 @Data
 @Entity
 @Table(name = "persona")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Persona {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,5 +32,5 @@ public class Persona {
     private Boolean activo = true;
 
     @Column(name = "codigo", columnDefinition = "varchar(8)", nullable = false, unique = true)
-    private Long codigo;
+    private String codigo;
 }
